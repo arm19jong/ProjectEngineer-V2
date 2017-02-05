@@ -1,0 +1,818 @@
+﻿<Controls:MetroWindow x:Class="projectengineer.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+
+    xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls"
+
+        Title="MainWindow" Height="768" Width="1024" Background="#FFDEDCDC" FontSize="20" SizeChanged="changesize"
+        
+        >
+    <dragablz:TabablzControl SelectionChanged="TabablzControl_SelectionChanged">
+        <dragablz:TabablzControl.InterTabController>
+            <dragablz:InterTabController/>
+        </dragablz:TabablzControl.InterTabController>
+        <TabItem Header="สมัครสมาชิก" x:Name="tab_addmember" Selector.Selected="tab_addmember_Selected_1">
+            <TabPanel x:Name="tabwhite" Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                <TabPanel.Effect>
+                    <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                </TabPanel.Effect>
+                <TabPanel Margin="96,40,96,40" Background="White">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Name="textblock12" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom"><Run Text="รหัสนักศึกษา"/></TextBlock>
+                        <TextBox x:Name="addMember_IdKmitl" Grid.Column="1" Grid.Row="0" Text="" Foreground="Black" TextWrapping="Wrap" TextChanged="addMember_IdKmitl_TextChanged" MaxLength="8" PreviewTextInput="intonly" />
+
+                        <TextBlock x:Name="textblock13" Width="Auto" Height="Auto"   Grid.Column="2" Grid.Row="0" VerticalAlignment="Bottom"><Run Text="ชื่อ-นามสกุล"/></TextBlock>
+                        <TextBox x:Name="addMember_name" Grid.Column="3" Grid.Row="0" Text="" Foreground="Black" TextWrapping="Wrap"/>
+
+                        <TextBlock x:Name="textblock14" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom"><Run Text="ชื่อเล่น" /></TextBlock>
+                        <TextBox x:Name="addMember_nicname"  Grid.Column="1" Grid.Row="1" Text="" Foreground="Black" TextWrapping="Wrap" AcceptsTab="True"/>
+
+                        <TextBlock x:Name="textblock15" Width="Auto" Height="Auto"   Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom"><Run Text="คณะ"/></TextBlock>
+                        <ComboBox x:Name="addMember_fa" Width="Auto" Height="Auto" Grid.Column="3" Grid.Row="1" SelectedIndex="0">
+                            <ComboBoxItem Content="วิศวกรรมศาสตร์" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="สถาปัตยกรรมศาสตร์" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="ครุศาสตร์อุตสาหกรรม" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="เทคโนโลยีการเกษตร" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="วิทยาศาสตร์" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="อุตสาหกรรมเกษตร" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="เทคโนโลยีสารสนเทศ" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="วิทยาลัยนานาชาติ" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="วิทยาลัยนวัตกรรมการผลิตขั้นสูง" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="การบริหารและจัดการ" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="วิทยาลัยอุตสาหกรรมการบินนานาชาติ" Background="White"></ComboBoxItem>
+                        </ComboBox>
+
+                        <TextBlock x:Name="textblock16" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="2" VerticalAlignment="Bottom"><Run Text="ภาควิชา"/></TextBlock>
+                        <TextBox x:Name="addMember_park" Grid.Column="1" Grid.Row="2" Text=""   Foreground="Black" TextWrapping="Wrap" />
+
+                        <TextBlock x:Name="textblock17" Width="Auto" Height="Auto"   Grid.Column="2" Grid.Row="2" VerticalAlignment="Bottom"><Run Text="ห้อง"/></TextBlock>
+                        <ComboBox x:Name="addMember_room" Width="Auto" Height="Auto" Grid.Column="3" Grid.Row="2" SelectedIndex="0">
+                            <ComboBoxItem Content="-" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="01" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="02" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="03" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="04" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="05" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="06" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="07" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="08" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="09" Background="White"></ComboBoxItem>
+                            <ComboBoxItem Content="10" Background="White"></ComboBoxItem>
+                        </ComboBox>
+
+                        <TextBlock x:Name="textblock18" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom"><Run Text="โทรศัพท์"/></TextBlock>
+                        <TextBox x:Name="addMember_phone" Grid.Column="1" Grid.Row="3" Text=""  Foreground="Black" MaxLength="10" PreviewTextInput="intonly"/>
+
+                        <TextBlock x:Name="textblock19" Width="Auto" Height="Auto"   Grid.Column="2" Grid.Row="3" VerticalAlignment="Bottom"><Run Text="Admin"/></TextBlock>
+                        <ToggleButton x:Name="ToggleButton" Grid.Row="3" Grid.Column="4" Height="Auto" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" />
+
+                        <TabPanel x:Name="admin_form" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="6" Background="#FFCE93D8" Margin="0,0,-16,16" Height="Auto" Width="Auto">
+                            <TabPanel.Effect>
+                                <DropShadowEffect/>
+                            </TabPanel.Effect>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                            </Grid>
+                            <TabPanel Margin="16" Grid.Column="0" Grid.Row="0" >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock x:Name="textblock22" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom"><Run Text="User"/></TextBlock>
+                                    <TextBox x:Name="addMember_user_admin" Grid.Column="1" Grid.Row="0" Text=""   Foreground="Black" TextWrapping ="Wrap" />
+
+                                    <TextBlock x:Name="textblock23" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom"><Run Text="Pass"/></TextBlock>
+                                    <PasswordBox x:Name="addMember_pass_admin" Grid.Column="1" Grid.Row="1"    Foreground="Black" />
+
+                                    <TextBlock x:Name="textblock24" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="2" VerticalAlignment="Bottom"><Run Text="Confirm Pass"/></TextBlock>
+                                    <PasswordBox x:Name="addMember_pass_admin_con" Grid.Column="1" Grid.Row="2"  Foreground="Black" />
+
+                                    <TextBlock x:Name="textblock25" Width="Auto" Height="Auto"   Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" Visibility="Hidden"><Run Text="User God"/></TextBlock>
+                                    <TextBox x:Name="addMember_user_god" Grid.Column="3" Grid.Row="1" Text=""   Foreground="Black" TextWrapping ="Wrap" Visibility="Hidden"/>
+
+                                    <TextBlock x:Name="textblock26" Width="Auto" Height="Auto"   Grid.Column="2" Grid.Row="2" VerticalAlignment="Bottom" Visibility="Hidden"><Run Text="pass God"/></TextBlock>
+                                    <PasswordBox x:Name="addMember_pass_god" Grid.Column="3" Grid.Row="2"  Foreground="Black" Visibility="Hidden" />
+
+
+                                </Grid>
+                            </TabPanel>
+
+                        </TabPanel>
+
+                        <TextBlock x:Name="textblock27" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="7" VerticalAlignment="Bottom"><Run Text="หมายเหตุ"/></TextBlock>
+                        <TextBox x:Name="addMember_other" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="7" Text=""   Foreground="Black" TextWrapping="Wrap" />
+
+                        <TextBlock Grid.Row="8" />
+                        <Button x:Name="addMember_submit" Width="Auto" Height="40" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="9" Grid.RowSpan="9" Content="Submit" Click="add_member"/>
+                        <Button x:Name="creat_table" Width="Auto" Height="40" Grid.Column="0" Grid.Row="9" Grid.RowSpan="9" Content="c_table" Click="click_add_member" Visibility="Collapsed"/>
+                        <Button x:Name="test_cha" Grid.Column="1" Grid.Row="10" Click="test_cha_Click" Content="aa" Visibility="Collapsed"/>
+                    </Grid>
+                </TabPanel>
+
+
+            </TabPanel>
+        </TabItem>
+
+        <TabItem Header="จอง/ยืม/คืน" x:Name="tab_inout">
+
+            <TabPanel x:Name="tabwhite2" Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                <TabPanel.Effect>
+                    <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                </TabPanel.Effect>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="16" >
+                    <TabPanel Margin="96,40" Background="White">
+                        <Grid Margin="0,0,0,-1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock x:Name="textblock42" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom"><Run Text="รหัสนักศึกษา"/></TextBlock>
+                            <TextBox x:Name="inout_IdKmitl" Grid.Column="1" Grid.Row="0" Text="" Foreground="Black" TextWrapping="Wrap" TextChanged="inout_IdKmitl_TextChanged" MinWidth="100" />
+
+                            <TextBlock x:Name="textblock43" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom"><Run Text="ชื่อ-นามสกุล"/></TextBlock>
+                            <TextBox x:Name="inout_name" IsEnabled="False" Grid.Column="1" Grid.Row="1" Text="" Foreground="Black" TextWrapping="Wrap" MinWidth="100"/>
+
+                            <TextBlock x:Name="textblock44" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="2" VerticalAlignment="Bottom"><Run Text="คณะ" /></TextBlock>
+                            <TextBox x:Name="inout_fa" IsEnabled="False" Grid.Column="1" Grid.Row="2" Text="" Foreground="Black" TextWrapping="Wrap" FontSize="12"/>
+
+                            <TextBlock x:Name="textblock45" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom"><Run Text="ภาควิชา" /></TextBlock>
+                            <TextBox x:Name="inout_park" IsEnabled="False" Grid.Column="1" Grid.Row="3" Text="" Foreground="Black" TextWrapping="Wrap"/>
+
+                            <TextBlock x:Name="textblock444" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="4" VerticalAlignment="Bottom"><Run Text="ห้อง" /></TextBlock>
+                            <TextBox x:Name="inout_room" IsEnabled="False" Grid.Column="1" Grid.Row="4" Text="" Foreground="Black" TextWrapping="Wrap"/>
+
+                            <TextBlock x:Name="textblock46" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="5" VerticalAlignment="Bottom"><Run Text="สังกัด" /></TextBlock>
+                            <TextBox x:Name="inout_belong_to"  Grid.Column="1" Grid.Row="5" Text="" Foreground="Black" TextWrapping="Wrap" BorderBrush="#89000000"/>
+
+                            <TextBlock x:Name="textblock47" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="6" VerticalAlignment="Bottom"><Run Text="งาน" /></TextBlock>
+                            <TextBox x:Name="inout_project"  Grid.Column="1" Grid.Row="6" Text="" Foreground="Black" TextWrapping="Wrap"/>
+
+                            <TextBlock x:Name="textblock48" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="7" VerticalAlignment="Bottom"><Run Text="วันที่ยืม" /></TextBlock>
+
+
+                            <Button Grid.Row="0" Grid.Column="3" Content="Add" Click="Gen" />
+                            <Button Grid.Row="0" Grid.Column="5" Content="Del" Click="Del" />
+
+                            <Button Grid.Row="0" Grid.Column="4" Content="รายการพัสดุ" Click="Button_Click_windows2" />
+
+
+                            <TabPanel Grid.Column="3" Grid.ColumnSpan="5" Grid.Row="1" Grid.RowSpan="7" Background="#FFCDCDCD">
+                                <ScrollViewer VerticalScrollBarVisibility="Auto" >
+                                    <StackPanel x:Name="someStackPanel"  Margin="16" Background="White" ></StackPanel>
+                                </ScrollViewer>
+                            </TabPanel>
+
+
+                            <DatePicker x:Name="inout_datePicker_loan" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="7" SelectedDateChanged="inout_datePicker_loan_SelectedDateChanged" />
+                            <materialDesign:TimePicker x:Name="inout_timePicker_loan" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="7" Margin="0,0,267,0" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" Padding="0" BorderThickness="0,0,0,1"/>
+
+                            <TextBlock x:Name="textblock49" Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="8" VerticalAlignment="Bottom"><Run Text="วันที่คืน" /></TextBlock>
+
+
+                            <DatePicker x:Name="inout_datePicker_return" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="8" ></DatePicker>
+
+
+
+                            <materialDesign:TimePicker x:Name="inout_timePicker_return" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="8" Margin="0,0,267,0" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" Padding="0" BorderThickness="0,0,0,1"/>
+
+
+
+                            <Button x:Name="inout_submit" Grid.Column="3" Grid.ColumnSpan="7" Grid.Row="9"  Height="Auto" Content="Submit" BorderThickness="0,1,1,1" IsCancel="True" Padding="16,4,16,1" Margin="0" Click="inout_submit_Click"></Button>
+
+                            <StackPanel Margin="10" Grid.Column="0" Grid.Row="9">
+                                <RadioButton GroupName="ready" Name="res" IsChecked="True" Margin="0" VerticalContentAlignment="Bottom" Checked="res_Checked">จอง</RadioButton>
+                                <RadioButton GroupName="ready" Name="loan" AllowDrop="True" VerticalContentAlignment="Bottom" Checked="loan_Checked" >ยืม</RadioButton>
+                                <RadioButton GroupName="ready" Name="return" VerticalContentAlignment="Bottom" Checked="return_Checked">คืน</RadioButton>
+                            </StackPanel>
+
+                            <TextBlock Name="dateText" Grid.Column="2" Grid.Row="3" Text="123456"/>
+
+                            <StackPanel Margin="10" Grid.Column="1" Grid.Row="9">
+                                <RadioButton GroupName="inout" Name="indoor" IsChecked="True" Margin="0" VerticalContentAlignment="Bottom">จัดภายในสถาบัน</RadioButton>
+                                <RadioButton GroupName="inout" Name="outdoor" AllowDrop="True" VerticalContentAlignment="Bottom">จัดภายนอกสถาบัน</RadioButton>
+                                <Custom:NumericUpDown Name="inout_card" HorizontalAlignment="Left" Height="48" Width="200" FontSize="16"/>
+                            </StackPanel>
+                            <TextBlock x:Name="inout_tcard" Text="ช่องใส่บัตร" Grid.Column="2" Grid.Row="9" Margin="0,73,0,-53"/>
+
+                        </Grid>
+                    </TabPanel>
+                </ScrollViewer>
+            </TabPanel>
+
+        </TabItem>
+        <TabItem Header="Admin" x:Name="tab_admin" Selector.Selected="tab_admin_Selected">
+            
+
+                    <TabPanel x:Name="tabwhite4_" Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                        <TabPanel.Effect>
+                            <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                        </TabPanel.Effect>
+                        <TabPanel Margin="96,40" Background="White">
+                            <Grid Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                               
+
+                                <TextBlock Text="Username" Grid.Column="0" Grid.Row="0" Width="Auto"/>
+                                <TextBox x:Name="con_admin_user" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" MaxWidth="400" TextChanged="con_admin_user_TextChanged"/>
+
+                        <TextBlock Text="Password เก่า" Grid.Column="0" Grid.Row="1" Width="Auto"/>
+                        <PasswordBox x:Name="con_admin_pass_old" Grid.Column="1" Grid.Row="1"  MaxWidth="400" MinWidth="150"/>
+
+                        <TextBlock Text="password ใหม่" Grid.Column="0" Grid.Row="2" Width="Auto"/>
+                        <PasswordBox x:Name="con_admin_pass_new" Grid.Column="1" Grid.Row="2"  MaxWidth="400"/>
+
+                        <TextBlock Text="password ใหม่ (Confirm)" Grid.Column="0" Grid.Row="3" Width="Auto"/>
+                        <PasswordBox x:Name="con_admin_pass_new_con" Grid.Column="1" Grid.Row="3"  MaxWidth="400"/>
+
+                        <TextBlock Text="รหัสนักศึกษา:" Grid.Column="0" Grid.Row="4" Width="Auto"/>
+                        <TextBlock x:Name="con_admin_idkmitl" Text="" Grid.Column="1" Grid.Row="4" Width="Auto"/>
+                        <Button x:Name="con_admin_user_pass" Content="Submit" Grid.Column="1" Grid.Row="5" Click="con_admin_user_pass_Click"  />
+                            </Grid>
+                        </TabPanel>
+                    </TabPanel>
+
+
+
+
+
+                
+
+
+        </TabItem>
+        <TabItem Header="God" x:Name="tab_god" Selector.Selected="tab_god_Selected">
+            <dragablz:TabablzControl>
+                <dragablz:TabablzControl.InterTabController>
+                    <dragablz:InterTabController/>
+                </dragablz:TabablzControl.InterTabController>
+                <TabItem Header="เพิ่มลดแก้ไขพัสดุ">
+                    <TabPanel x:Name="tabwhite4" Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                        <TabPanel.Effect>
+                            <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                        </TabPanel.Effect>
+                        <TabPanel Margin="96,40" Background="White">
+                            <Grid Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="รหัสพัสดุ" Grid.Column="0" Grid.Row="0" Width="Auto"/>
+                                <TextBox x:Name="controlthing_idthing" Grid.Column="1" Grid.Row="0" MinWidth="200" TextWrapping="Wrap" MaxWidth="400" TextChanged="controlthing_idthing_TextChanged"/>
+
+                                <TextBlock Text="ชื่อพัสดุ" Grid.Column="0" Grid.Row="1" Width="Auto"/>
+                                <TextBox x:Name="controlthing_namething" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" MaxWidth="400"/>
+
+                                <TextBlock Text="จำนวณพัสดุทั้งหมด" Grid.Column="0" Grid.Row="2" Width="Auto"/>
+                                <TextBox x:Name="controlthing_allthing" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" MaxWidth="400"/>
+
+                                <TextBlock Text="ราคาพัสดุ" Grid.Column="0" Grid.Row="3" Width="Auto"/>
+                                <TextBox x:Name="controlthing_pricething" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" MaxWidth="400" />
+
+                                <TextBlock Text="หมายเหตุ (ค่าปรับ, ค่าเช่า)" Grid.Column="0" Grid.Row="4" Width="Auto"/>
+                                <TextBox x:Name="controlthing_otherthing" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" MaxWidth="400"/>
+
+                                <Button x:Name="controlthing_button" Content="Submit" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="5" Grid.RowSpan="6" Width="100" Height="50" Click="controlthing_button_Click"  />
+                            </Grid>
+                        </TabPanel>
+                    </TabPanel>
+                </TabItem>
+                <TabItem Header="แก้ไขข้อมูลGod">
+                    <TabPanel x:Name="tabwhite46" Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                        <TabPanel.Effect>
+                            <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                        </TabPanel.Effect>
+                        <TabPanel Margin="96,40" Background="White">
+                            <Grid Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    
+                                </Grid.RowDefinitions>
+                                <TextBlock  Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom"><Run Text="รหัสนักศึกษา"/></TextBlock>
+                                <TextBox x:Name="fixgod_IdKmitl" MinWidth="200" Grid.Column="1" Grid.Row="0" Text="" Foreground="Black" TextWrapping="Wrap" TextChanged="addMember_IdKmitl_TextChanged" />
+
+                                <TextBlock Width="Auto" Height="Auto"   Grid.Column="2" Grid.Row="0" VerticalAlignment="Bottom"><Run Text="ชื่อ-นามสกุล"/></TextBlock>
+                                <TextBox x:Name="fixgod_name" MinWidth="250" Grid.Column="3" Grid.Row="0" Text="" Foreground="Black" TextWrapping="Wrap"/>
+
+                                <TextBlock Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom"><Run Text="ชื่อเล่น" /></TextBlock>
+                                <TextBox x:Name="fixgod_nicname"  Grid.Column="1" Grid.Row="1" Text="" Foreground="Black" TextWrapping="Wrap"/>
+
+                                <TextBlock  Width="Auto" Height="Auto"   Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom"><Run Text="คณะ"/></TextBlock>
+                                <ComboBox x:Name="fixgod_fa" Width="Auto" Height="Auto" Grid.Column="3" Grid.Row="1" SelectedIndex="0">
+                                    <ComboBoxItem Content="วิศวกรรมศาสตร์" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="สถาปัตยกรรมศาสตร์" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="ครุศาสตร์อุตสาหกรรม" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="เทคโนโลยีการเกษตร" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="วิทยาศาสตร์" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="อุตสาหกรรมเกษตร" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="เทคโนโลยีสารสนเทศ" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="วิทยาลัยนานาชาติ" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="วิทยาลัยนาโนเทคโนโลยีพระจอมเกล้าลาดกระบัง" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="วิทยาลัยนวัตกรรมการผลิตขั้นสูง" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="การบริหารและจัดการ" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="วิทยาลัยอุตสาหกรรมการบินนานาชาติ" Background="White"></ComboBoxItem>
+                                </ComboBox>
+
+                                <TextBlock  Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="2" VerticalAlignment="Bottom"><Run Text="ภาควิชา"/></TextBlock>
+                                <TextBox x:Name="fixgod_park" Grid.Column="1" Grid.Row="2" Text=""   Foreground="Black" TextWrapping="Wrap" />
+
+                                <TextBlock Width="Auto" Height="Auto"   Grid.Column="2" Grid.Row="2" VerticalAlignment="Bottom"><Run Text="ห้อง"/></TextBlock>
+                                <ComboBox x:Name="fixgod_room" Width="Auto" Height="Auto" Grid.Column="3" Grid.Row="2" SelectedIndex="0">
+                                    <ComboBoxItem Content="-" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="01" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="02" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="03" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="04" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="05" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="06" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="07" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="08" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="09" Background="White"></ComboBoxItem>
+                                    <ComboBoxItem Content="10" Background="White"></ComboBoxItem>
+                                </ComboBox>
+
+                                <TextBlock Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom"><Run Text="โทรศัพท์"/></TextBlock>
+                                <TextBox x:Name="fixgod_phone" Grid.Column="1" Grid.Row="3" Text=""  Foreground="Black" MaxLength="10" PreviewTextInput="intonly"/>
+
+                                <TextBlock Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="4" VerticalAlignment="Bottom"><Run Text="หมายเหตุ"/></TextBlock>
+                                <TextBox x:Name="fixgod_other" TextWrapping="Wrap" MinWidth="450" MaxWidth="450" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="4" Text=""  Foreground="Black"/>
+
+                                <TextBlock Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="5" VerticalAlignment="Bottom"><Run Text="Username"/></TextBlock>
+                                <TextBox x:Name="fixgod_username" TextWrapping="Wrap" MinWidth="200" MaxWidth="200" Grid.Column="1" Grid.Row="5" Text=""  Foreground="Black"/>
+
+
+                                <TextBlock Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="6" VerticalAlignment="Bottom"><Run Text="Password"/></TextBlock>
+                                <PasswordBox x:Name="fixgod_password" MinWidth="200" MaxWidth="200" Grid.Column="1" Grid.Row="6" Foreground="Black"/>
+
+                                <TextBlock Width="Auto" Height="Auto"   Grid.Column="2" Grid.Row="6" VerticalAlignment="Bottom"><Run Text="ConfirmPassword"/></TextBlock>
+                                <PasswordBox x:Name="fixgod_conpassword" MinWidth="200" MaxWidth="200" Grid.Column="3" Grid.Row="6" Foreground="Black"/>
+
+                                <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="1" Height="40" Content="Save" x:Name="button_save" Click="button_save_Click" />
+                                <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Height="40" Content="โชวข้อมูล" x:Name="button_show_god" Click="button_show_god_Click" />
+
+                            </Grid>
+                        </TabPanel>
+                    </TabPanel>
+
+
+
+
+
+                </TabItem>
+                <TabItem Header="ลบสมาชิก/ลบพัสดุ">
+                    <TabPanel x:Name="tabwhite47" Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                        <TabPanel.Effect>
+                            <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                        </TabPanel.Effect>
+                        <TabPanel Margin="96,40" Background="White">
+                            <Grid Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+
+                                </Grid.RowDefinitions>
+                                <TextBlock  Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom"><Run Text="รหัสนักศึกษา"/></TextBlock>
+                                <TextBox x:Name="dell_member" MinWidth="200" Grid.Column="1" Grid.Row="0" Text="" Foreground="Black" TextWrapping="Wrap" />
+
+                                <TextBox x:Name="dell_member_start" MinWidth="200" Grid.Column="1" Grid.Row="1" Text="" Foreground="Black" TextWrapping="Wrap"  />
+                                <TextBox x:Name="dell_member_stop" MinWidth="200" Grid.Column="1" Grid.Row="2" Text="" Foreground="Black" TextWrapping="Wrap" />
+
+
+                                <Button Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Height="40" Content="Del" x:Name="dell" Click="dell_Click"  />
+                                <Button Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="3" Height="Auto" Width="80" Content="Del" x:Name="dell2" Click="dell2_Click"  />
+
+                                <TextBlock  Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom"><Run Text="รหัสพัสดุ"/></TextBlock>
+                                <TextBox x:Name="dell_thing" MinWidth="200" Grid.Column="1" Grid.Row="3" Text="" Foreground="Black" TextWrapping="Wrap" />
+
+                                <Button x:Name="button_del_thing" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" Content="Del" Click="button_del_thing_Click" />
+
+
+                            </Grid>
+                        </TabPanel>
+                    </TabPanel>
+                </TabItem>
+
+                <TabItem Header="เพิ่ม/ลด Admin">
+                    <TabPanel x:Name="tabwhite479" Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                        <TabPanel.Effect>
+                            <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                        </TabPanel.Effect>
+                        <TabPanel Margin="96,40" Background="White">
+                            <Grid Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+
+                                </Grid.RowDefinitions>
+                                
+                                <TextBlock  Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom"><Run Text="รหัสนักศึกษา"/></TextBlock>
+                                <TextBox x:Name="god_add_admin_idkmitl" MinWidth="200" Grid.Column="1" Grid.Row="0" Text="" Foreground="Black" TextWrapping="Wrap" TextChanged="god_add_admin_idkmitl_TextChanged"  />
+
+                                <TextBlock  Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom"><Run Text="Username"/></TextBlock>
+                                <TextBox x:Name="god_add_admin_username" MinWidth="200" Grid.Column="1" Grid.Row="1" Foreground="Black" />
+
+                                <TextBlock  Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="2" VerticalAlignment="Bottom"><Run Text="Password"/></TextBlock>
+                                <PasswordBox x:Name="god_add_admin_password" MinWidth="200" Grid.Column="1" Grid.Row="2"  Foreground="Black"  />
+
+                                <TextBlock  Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom"><Run Text="Password Confirm"/></TextBlock>
+                                <PasswordBox x:Name="god_add_admin_password_con" MinWidth="200" Grid.Column="1" Grid.Row="3"  Foreground="Black" />
+
+
+                                <Button Grid.Row="3" Grid.Column="2" Content="Add" x:Name="add_admin_button" Click="add_admin_button_Click"  />
+                               
+
+                                <TextBlock  Width="Auto" Height="Auto"   Grid.Column="0" Grid.Row="4" VerticalAlignment="Bottom"><Run Text="รหัสนักศึกษา"/></TextBlock>
+                                <TextBox x:Name="god_dell_admin" MinWidth="200" Grid.Column="1" Grid.Row="4" Text="" Foreground="Black" TextWrapping="Wrap" />
+
+                                <Button x:Name="dell_admin_button" Grid.Row="4" Grid.Column="2"  Content="Del" Click="dell_admin_button_Click" />
+
+
+                            </Grid>
+                        </TabPanel>
+                    </TabPanel>
+                </TabItem>
+
+
+                <TabItem Header="รายการพัสดุ">
+                    <TabPanel  Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                        <TabPanel.Effect>
+                            <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                        </TabPanel.Effect>
+                        <TabPanel Margin="96,40" Background="White">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <StackPanel MinWidth="900">
+                                    <Grid Margin="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="search" Grid.Column="0" Grid.Row="0"/>
+                                        <ComboBox x:Name="admin_search_god" Width="Auto" Height="Auto" Grid.Column="1" Grid.Row="0" SelectedIndex="0">
+                                            <ComboBoxItem Content="รหัสพัสดุ" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ชื่อพัสดุ" Background="White"></ComboBoxItem>
+                                        </ComboBox>
+                                        <TextBox x:Name="search_thing_text_god" MinWidth="200" Grid.Column="2" Grid.Row="0"/>
+                                        <Button x:Name="search_thing_god" Content="Search" Grid.Column="3" Grid.Row ="0" Click="search_thing_Click_god"/>
+                                    </Grid>
+
+                                    <DataGrid AutoGenerateColumns="True" x:Name="see_thing_god" Background="White"  Height="400" Width="1000" IsReadOnly="True" EnableColumnVirtualization="True"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabPanel>
+                    </TabPanel>
+                </TabItem>
+                <TabItem Header="รายชื่อสมาชิก">
+
+                    <TabPanel Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                        <TabPanel.Effect>
+                            <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                        </TabPanel.Effect>
+                        <TabPanel Margin="96,40" Background="White">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <StackPanel>
+                                    <Grid Margin="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="search" Grid.Column="0" Grid.Row="0"/>
+                                        <ComboBox x:Name="admin_search_member_god" Width="Auto" Height="Auto" Grid.Column="1" Grid.Row="0" SelectedIndex="0">
+                                            <ComboBoxItem Content="รหัสนักศึกษา" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ชื่อ" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="นามสกุล" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ชื่อเล่น" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="คณะ" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ภาควิชา" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ห้อง" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="เบอร์โทรศัพท์" Background="White"></ComboBoxItem>
+                                        </ComboBox>
+                                        <TextBox x:Name="search_member_text_god" MinWidth="200" Grid.Column="2" Grid.Row="0"/>
+                                        <Button x:Name="search_member_god" Content="Search" Grid.Column="3" Grid.Row ="0" Click="search_member_Click_god"/>
+                                    </Grid>
+                                    <DataGrid AutoGenerateColumns="True" x:Name="see_member_god" Background="White"  Height="400" Width="900" IsReadOnly="True" EnableColumnVirtualization="True"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabPanel>
+                    </TabPanel>
+
+
+                </TabItem>
+
+
+            </dragablz:TabablzControl>
+
+        </TabItem>
+        
+        <TabItem x:Name="admin" Header="โชวตาราง">
+            <dragablz:TabablzControl>
+                <dragablz:TabablzControl.InterTabController>
+                    <dragablz:InterTabController/>
+                </dragablz:TabablzControl.InterTabController>
+                <TabItem Header="รายการพัสดุ">
+                    <TabPanel x:Name="tabwhite5" Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                        <TabPanel.Effect>
+                            <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                        </TabPanel.Effect>
+                        <TabPanel Margin="96,40" Background="White">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <StackPanel MinWidth="900">
+                                    <Grid Margin="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="search" Grid.Column="0" Grid.Row="0"/>
+                                        <ComboBox x:Name="admin_search" Width="Auto" Height="Auto" Grid.Column="1" Grid.Row="0" SelectedIndex="0">
+                                            <ComboBoxItem Content="รหัสพัสดุ" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ชื่อพัสดุ" Background="White"></ComboBoxItem>
+                                        </ComboBox>
+                                        <TextBox x:Name="search_thing_text" MinWidth="200" Grid.Column="2" Grid.Row="0"/>
+                                        <Button x:Name="search_thing" Content="Search" Grid.Column="3" Grid.Row ="0" Click="search_thing_Click"/>
+                                    </Grid>
+                                    
+                                    <DataGrid AutoGenerateColumns="True" x:Name="see_thing" Background="White"  Height="400" Width="1000" IsReadOnly="True" EnableColumnVirtualization="True"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabPanel>
+                    </TabPanel>
+                </TabItem>
+                <TabItem Header="รายชื่อสมาชิก">
+
+                    <TabPanel Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                        <TabPanel.Effect>
+                            <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                        </TabPanel.Effect>
+                        <TabPanel Margin="96,40" Background="White">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <StackPanel>
+                                    <Grid Margin="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="search" Grid.Column="0" Grid.Row="0"/>
+                                        <ComboBox x:Name="admin_search_member" Width="Auto" Height="Auto" Grid.Column="1" Grid.Row="0" SelectedIndex="0">
+                                            <ComboBoxItem Content="รหัสนักศึกษา" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ชื่อ" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="นามสกุล" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ชื่อเล่น" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="คณะ" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ภาควิชา" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ห้อง" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="เบอร์โทรศัพท์" Background="White"></ComboBoxItem>
+                                        </ComboBox>
+                                        <TextBox x:Name="search_member_text" MinWidth="200" Grid.Column="2" Grid.Row="0"/>
+                                        <Button x:Name="search_member" Content="Search" Grid.Column="3" Grid.Row ="0" Click="search_member_Click"/>
+                                    </Grid>
+                                    <DataGrid AutoGenerateColumns="True" x:Name="see_member" Background="White"  Height="400" Width="900" IsReadOnly="True" EnableColumnVirtualization="True"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabPanel>
+                    </TabPanel>
+
+
+                </TabItem>
+                <TabItem Header="จอง">
+                    <TabPanel Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                        <TabPanel.Effect>
+                            <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                        </TabPanel.Effect>
+                        <TabPanel Margin="96,40" Background="White">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <StackPanel>
+                                    <Grid Margin="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="search" Grid.Column="0" Grid.Row="0"/>
+                                        <ComboBox x:Name="admin_search_member2_res" Width="Auto" Height="Auto" Grid.Column="1" Grid.Row="0" SelectedIndex="0">
+                                            <ComboBoxItem Content="รหัสนักศึกษา" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ชื่อ นามสกุล" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ชื่อเล่น" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="คณะ" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ภาควิชา" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ห้อง" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="เบอร์โทรศัพท์" Background="White"></ComboBoxItem>
+                                        </ComboBox>
+                                        <TextBox x:Name="search_member_text2_res" MinWidth="200" Grid.Column="2" Grid.Row="0"/>
+                                        <Button x:Name="search_member2_res" Content="Search" Grid.Column="3" Grid.Row ="0" Click="search_member_Click2_res"/>
+                                    </Grid>
+                                    <DataGrid AutoGenerateColumns="True" x:Name="see_member2_res" Background="White"  Height="400" Width="900" IsReadOnly="True" EnableColumnVirtualization="True"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabPanel>
+                    </TabPanel>
+
+                </TabItem>
+
+                <TabItem Header="ยืม/คืน">
+                    <TabPanel Margin="96,16,96,24" OpacityMask="Black" Background="White" >
+                        <TabPanel.Effect>
+                            <DropShadowEffect BlurRadius="7" Direction="301" Opacity="0.67" ShadowDepth="8"/>
+                        </TabPanel.Effect>
+                        <TabPanel Margin="96,40" Background="White">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <StackPanel>
+                                    <Grid Margin="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="search" Grid.Column="0" Grid.Row="0"/>
+                                        <ComboBox x:Name="admin_search_member2" Width="Auto" Height="Auto" Grid.Column="1" Grid.Row="0" SelectedIndex="0">
+                                            <ComboBoxItem Content="รหัสนักศึกษา" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ชื่อ นามสกุล" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ชื่อเล่น" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="คณะ" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ภาควิชา" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="ห้อง" Background="White"></ComboBoxItem>
+                                            <ComboBoxItem Content="เบอร์โทรศัพท์" Background="White"></ComboBoxItem>
+                                        </ComboBox>
+                                        <TextBox x:Name="search_member_text2" MinWidth="200" Grid.Column="2" Grid.Row="0"/>
+                                        <Button x:Name="search_member2" Content="Search" Grid.Column="3" Grid.Row ="0" Click="search_member_Click2"/>
+                                    </Grid>
+                                    <DataGrid AutoGenerateColumns="True" x:Name="see_member2" Background="White"  Height="400" Width="900" IsReadOnly="True" EnableColumnVirtualization="True"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabPanel>
+                    </TabPanel>
+
+                </TabItem>
+
+            </dragablz:TabablzControl>
+        </TabItem>
+        <TabItem Header="ยังไม่ได้คืน">
+            <StackPanel>
+                <Button Width="100" Height="40" Content="โชว์ข้อมูล" Margin="-12,0,0,0" Click="Button_Click_1"/>
+                <DataGrid AutoGenerateColumns="True" x:Name="datagrid" Background="White" MinWidth="59" MinHeight="500" Height="600" Width="800" IsReadOnly="True" EnableColumnVirtualization="True">
+                    <DataGrid.Effect>
+                        <DropShadowEffect/>
+                    </DataGrid.Effect>
+                </DataGrid>
+            </StackPanel>
+        </TabItem>
+
+
+
+
+    </dragablz:TabablzControl>
+
+
+</Controls:MetroWindow>

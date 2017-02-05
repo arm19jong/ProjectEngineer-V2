@@ -1,0 +1,13 @@
+﻿<Window x:Class="projectengineer.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projectengineer"
+        mc:Ignorable="d"
+        Title="ตารางพัสดุ" Height="300" Width="300">
+    <Grid>
+        <DataGrid x:Name="dataGrid" Margin="26.247,20.531,27.481,22.543"/>
+
+    </Grid>
+</Window>
